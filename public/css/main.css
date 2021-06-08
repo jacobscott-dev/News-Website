@@ -1,0 +1,250 @@
+
+/* Main page template 
+
+/* PAGE GRID ******************************************************************/
+* {
+    box-sizing: border-box;;
+}
+
+body {
+    display: grid;
+    grid-gap: 1rem;
+
+    /* Arrange in three rows: each as tall as their content */
+    grid-template-rows: max-content max-content max-content;
+
+    /* Arrange in two columns: 
+     - right-hand-side a fixed width, 
+     - left-hand-side with the remaining space */
+    grid-template-columns: 1fr 10em;
+
+    /* Limit page width to a sensible maximum 
+       and centre the page in the screen */
+    max-width: 90rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav {
+    /* Place navigation across the top of the page:
+     - in first row, from first to last column */
+    grid-row: 1;
+    grid-column: 1 / -1;
+}
+
+footer {
+    /* Place navigation across the top of the page:
+     - in last row, from first to last column */
+    grid-row: -1;
+    grid-column: 1 / -1;
+}
+
+/* MAIN GRID ******************************************************************/
+
+main {
+    display: grid;
+    grid-gap: 0.5rem;
+
+    /* Three evenly spaced columns */
+    grid-area: 'left center right';
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+main header {
+    /* Place header across the top of the main element:
+     - from first to last column */
+    grid-column: 1 / -1;
+}
+
+/* PAGE FORMATTING ************************************************************/
+
+body {
+    background-color: lightgrey;
+}
+
+main {
+    background-color: white;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+article {
+    
+
+}
+
+footer {
+    background-color: White;
+    color: Black;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+/* NAVIGATION *****************************************************************/
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    /* Allow menu options to flow across the page and wrap */
+    display: inline-block;
+    margin-right: 10px;
+    background-color: White;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+    min-width: 5%;
+}
+
+nav a {
+    color: black;
+
+}
+
+
+/* CONTENT ********************************************************************/
+
+/* Remove gap above section headings */
+h2:first-child {
+    margin-top: 0;
+}
+
+main {
+    padding: 0.5rem;
+}
+
+/* Add a border around each section in the main element */
+main article {
+    border-bottom: 1px solid lightgrey;
+    padding: 0.5rem;
+    margin: 10px;
+}
+
+main article h2 {
+    text-align: center;
+}
+
+#username {
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+}
+
+.articles_container {
+    grid-area: center;
+}
+
+.article_excerpt {
+    text-align: center;
+}
+.article_body {
+    text-align: left;
+}
+
+.home_image {
+    height: 500px;
+    border: 1px solid LightGrey;
+}
+
+.search_container {
+    margin-top: 25px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid black;
+    width: 250px;
+    height: 27px;
+    float: right;
+    align-content: right;
+    
+}
+
+.search_bar {
+    height: 30px;
+    position: absolute;
+    border: 0;
+    width:216px;
+    height:25px;
+}
+
+.search_btn {
+    float: right;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.article_image {
+    width: 250px;
+    height: 250px;
+    align-self: center;
+    margin:auto;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.sidebar {
+   
+}
+
+h1 {
+    color: grey;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* MEDIA QUERIES TO REARRANGE ELEMENTS ****************************************/
+
+/* Down to two columns of sections on smaller laptop screens */
+@media screen and (max-width: 70rem) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Hide sidebar column on tablets */
+@media screen and (max-width: 50rem) {
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+}
+
+/* Down to one columns of sections on smartphone screens */
+@media screen and (max-width: 30rem) {
+    main {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+
+    body {
+        /* Remove 8 pixel default margin around outside of page */
+        margin: 0;
+    }
+
+    .home_image {
+        display: none;
+    }
+}
+
+/* Show menu options underneath each other on smaller smartphone screens */
+@media screen and (max-width: 25rem) {
+    nav li {
+        display: block;
+    }
+
+    #username {
+        border-radius: 0;
+    }
+}

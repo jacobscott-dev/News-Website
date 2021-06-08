@@ -1,0 +1,5 @@
+# Files to be ignored when pushed to git.
+vendor
+# SFTP configuration file
+sftp-config.json
+sftp-config-alt*.json
