@@ -37,6 +37,6 @@ username
 email
 password
 
-In the windows terminal you will need to run 'composer update' from the PHPMVCFramework directory.
+In the windows terminal you will need to run 'composer update' from the News-Website directory.
 
-Run php -S localhost:port number; from 'PHPMVCFramework/public' directory.
+Run php -S localhost:port number; from 'News-Website/public' directory.
