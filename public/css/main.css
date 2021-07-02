@@ -9,17 +9,9 @@
 body {
     display: grid;
     grid-gap: 1rem;
-
-    /* Arrange in three rows: each as tall as their content */
     grid-template-rows: max-content max-content max-content;
-
-    /* Arrange in two columns: 
-     - right-hand-side a fixed width, 
-     - left-hand-side with the remaining space */
     grid-template-columns: 1fr 10em;
 
-    /* Limit page width to a sensible maximum 
-       and centre the page in the screen */
     max-width: 90rem;
     margin-left: auto;
     margin-right: auto;
@@ -44,8 +36,6 @@ footer {
 main {
     display: grid;
     grid-gap: 0.5rem;
-
-    /* Three evenly spaced columns */
     grid-area: 'left center right';
     grid-template-columns: 1fr 1fr 1fr;
 }

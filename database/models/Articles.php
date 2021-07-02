@@ -34,4 +34,13 @@ class Articles extends QueryBuilder
 		return $results->fetchAll();
 	}
 
+	public static function create(array $article)
+	{
+		
+		$columns = " (" . implode(", ", array_keys($article)) . ")";
+		$values = "('" . implode("', '", array_values($article)) . "')";
+
+		self::insert($columns, $values, 'articles');
+	}
+
 }

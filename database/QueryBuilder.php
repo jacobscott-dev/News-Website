@@ -35,4 +35,11 @@ class QueryBuilder extends Model
 		$results->execute();
 		return $results->fetchAll();
 	}
+
+	protected static function insert($columns, $values, $tablename)
+	{
+		$sql = "INSERT INTO $tablename $columns VALUES $values";
+		$results = self::$pdo->prepare($sql);
+		$results->execute();
+	}
 }
