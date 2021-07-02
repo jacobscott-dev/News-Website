@@ -4,7 +4,6 @@ use app\controllers\Controller;
 use app\core\Application;
 use app\core\Request;
 use app\core\Session;
-use app\database\models\Articles;
 
 /**
  * Class SiteController
@@ -35,53 +34,53 @@ class SiteController extends Controller
 	public function home()
 	{
 		$this->render->setLayout('main');
-		$params = Articles::getArticles(4);
-		return $this->render('home', $params);
+		//$params = Articles::getArticles(4);
+		return $this->render('home');
 	}
 
 		public function health()
 	{
 		$this->render->setLayout('articles_layout');
-		$params = Articles::getCategory('health');
-		return $this->render('health', $params);
+		//$params = Articles::getCategory('health');
+		return $this->render('health');
 	}
 
 		public function science()
 	{
 		$this->render->setLayout('articles_layout');
-		$params = Articles::getCategory('science');
-		return $this->render('science', $params);
+		//$params = Articles::getCategory('science');
+		return $this->render('science');
 	}
 
 		public function sport()
 	{
 		$this->render->setLayout('articles_layout');
-		$params = Articles::getCategory('sport');
-		return $this->render('sport', $params);
+		//$params = Articles::getCategory('sport');
+		return $this->render('sport');
 	}
 
 		public function business()
 	{
 		$this->render->setLayout('articles_layout');
-		$params = Articles::getCategory('business');
-		return $this->render('business', $params);
+		//$params = Articles::getCategory('business');
+		return $this->render('business');
 	}
 	
 	public function allArticles()
 	{
 		$this->render->setLayout('articles_layout');
-		$params = Articles::getAllArticles();
-		return $this->render('articles', $params);
+		//$params = Articles::getAllArticles();
+		return $this->render('articles');
 	}
 
 	public function showArticle()
 	{
 		$id = Application::$app->getRouter()->getParams();
 		$this->render->setLayout('articles_layout');
-		$params = Articles::getArticle($id);
+		//$params = Articles::getArticle($id);
 
 		if ((int)$params > 0) {
-			return $this->render('article', $params);
+			return $this->render('article');
 		} else {
 			die(require '../views/_404.php');
 		}
