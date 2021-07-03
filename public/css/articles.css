@@ -16,7 +16,7 @@ body {
     /* Arrange in two columns: 
      - right-hand-side a fixed width, 
      - left-hand-side with the remaining space */
-    grid-template-columns: 1fr 10em;
+    grid-template-columns: 1fr;
 
     /* Limit page width to a sensible maximum 
        and centre the page in the screen */

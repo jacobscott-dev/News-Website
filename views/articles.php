@@ -17,9 +17,3 @@
 </article>    
 </main>
 
-<aside class="sidebar">
-  <h2>Sidebar</h2>
-  <p>
-  This is content in the right-hand column - but only visible on wider screens.
-  </p>
-</aside>

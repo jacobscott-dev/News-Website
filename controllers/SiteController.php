@@ -4,7 +4,7 @@ use app\controllers\Controller;
 use app\core\Application;
 use app\core\Request;
 use app\core\Session;
-use app\database\seeders\ArticleSeeder;
+use app\database\api\WebSearch\WebSearchAPI;
 
 /**
  * Class SiteController
@@ -35,7 +35,7 @@ class SiteController extends Controller
 	public function home()
 	{
 		$this->render->setLayout('main');
-		$params = ArticleSeeder::seed('health');
+		$params = WebSearchAPI::trendingNews();
 		return $this->render('home', $params);
 	}
 

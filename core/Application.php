@@ -6,7 +6,6 @@ use app\database\models\Model;
 use app\controllers\Controller;
 use app\core\Render;
 use app\core\Session;
-use app\database\seeders\ArticleSeeder;
 
 /**
  * Class Application
@@ -47,9 +46,6 @@ class Application
 
 	public function run()
 	{
-		if (!isset($_SESSION['Seeded'])) {
-			ArticleSeeder::seed('health');
-		}
 		echo $this->router->resolve();
 	}
 }
