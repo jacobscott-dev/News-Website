@@ -18,10 +18,11 @@
       
 
       
-      <?php foreach($params as $articles) { ?>
+      <?php foreach($params as $key) { ?>
         <article>
-
-          <h2><?= $articles['title']; ?></h2></a>
+          <img src="<?= $key[0]['image']['url']; ?>">
+          <h3><?= $key[0]['title']; ?></h3>
+          <p><?= $key[0]['snippet']; ?></p>
           
         </article>
       <?php } ?>

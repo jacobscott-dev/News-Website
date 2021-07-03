@@ -9,24 +9,28 @@ class ArticleSeeder
 {
 	public static function seed(string $cat, int $num = 1)
 	{
-		$query_fields = [
+		$categories = array('Health');
+		$news = [];
+		foreach ($categories as $cat) {
+			$query_fields = [
           	'autoCorrect' => 'true',
           	'pageNumber' => 1,
           	'pageSize' => $num,
           	'safeSearch' => 'false',
           	'q' => "$cat"
-  		];
-  		$curl = curl_init(News::getAPI() . '?' . http_build_query($query_fields));
-  		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-  		curl_setopt($curl, CURLOPT_HTTPHEADER, [
-          'X-Rapidapi-Host: contextualwebsearch-websearch-v1.p.rapidapi.com',
-          'X-RapidAPI-Key: d551a50efbmsh842e8bdf709d4fbp100594jsn8f8a108864d1'
-  		]);
- 		$response = curl_exec($curl);
+  			];
+  			$curl = curl_init(News::getAPI() . '?' . http_build_query($query_fields));
+  			curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+  			curl_setopt($curl, CURLOPT_HTTPHEADER, [
+         	 'X-Rapidapi-Host: contextualwebsearch-websearch-v1.p.rapidapi.com',
+          	'X-RapidAPI-Key: d551a50efbmsh842e8bdf709d4fbp100594jsn8f8a108864d1'
+  			]);
+ 			$response = json_decode(curl_exec($curl), true);
+ 			array_push($news, $response['value']);
+		}
  		curl_close($curl);
- 		die($response['value']);	 
- 		return $response['value'];
-
-		//Session::set('Seeded', 'true');
+ 		//die(print_r($news));
+ 		//Session::set('Seeded', 'true');
+ 		return $news;
 	}
 }

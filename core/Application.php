@@ -48,7 +48,7 @@ class Application
 	public function run()
 	{
 		if (!isset($_SESSION['Seeded'])) {
-			ArticleSeeder::seed();
+			ArticleSeeder::seed('health');
 		}
 		echo $this->router->resolve();
 	}

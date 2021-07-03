@@ -36,7 +36,7 @@ class SiteController extends Controller
 	{
 		$this->render->setLayout('main');
 		$params = ArticleSeeder::seed('health');
-		return $this->render('home');
+		return $this->render('home', $params);
 	}
 
 		public function health()
