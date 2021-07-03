@@ -4,6 +4,7 @@ use app\controllers\Controller;
 use app\core\Application;
 use app\core\Request;
 use app\core\Session;
+use app\database\seeders\ArticleSeeder;
 
 /**
  * Class SiteController
@@ -34,7 +35,7 @@ class SiteController extends Controller
 	public function home()
 	{
 		$this->render->setLayout('main');
-		//$params = Articles::getArticles(4);
+		$params = ArticleSeeder::seed('health');
 		return $this->render('home');
 	}
 
