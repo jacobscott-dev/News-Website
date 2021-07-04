@@ -72,10 +72,14 @@
 
        {{content}}
        
+       <article id="articles">
+         
+       </article>
     
      <footer>
       <div id="about">About this website</div>
       <div id="copyright">This is the copyright notice</div>
     </footer>
+    <script src="js/WebSearchAPI.js" type="text/javascript"></script>
   </body>
 </html>

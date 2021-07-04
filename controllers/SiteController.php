@@ -35,8 +35,8 @@ class SiteController extends Controller
 	public function home()
 	{
 		$this->render->setLayout('main');
-		$params = WebSearchAPI::trendingNews();
-		return $this->render('home', $params);
+		//$params = WebSearchAPI::trendingNews();
+		return $this->render('home');
 	}
 
 		public function health()
