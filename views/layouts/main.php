@@ -72,7 +72,7 @@
 
        {{content}}
        
-       <article id="articles">
+      
          
        </article>
     
