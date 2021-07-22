@@ -35,51 +35,43 @@ class SiteController extends Controller
 	public function home()
 	{
 		$this->render->setLayout('main');
-		//$params = WebSearchAPI::trendingNews();
 		return $this->render('home');
 	}
 
 		public function health()
 	{
 		$this->render->setLayout('articles_layout');
-		//$params = Articles::getCategory('health');
 		return $this->render('health');
 	}
 
 		public function science()
 	{
 		$this->render->setLayout('articles_layout');
-		//$params = Articles::getCategory('science');
 		return $this->render('science');
 	}
 
 		public function sport()
 	{
 		$this->render->setLayout('articles_layout');
-		//$params = Articles::getCategory('sport');
 		return $this->render('sport');
 	}
 
 		public function business()
 	{
 		$this->render->setLayout('articles_layout');
-		//$params = Articles::getCategory('business');
 		return $this->render('business');
 	}
 	
 	public function allArticles()
 	{
 		$this->render->setLayout('articles_layout');
-		//$params = Articles::getAllArticles();
-		return $this->render('articles');
+		return $this->render('news');
 	}
 
 	public function showArticle()
 	{
 		$id = Application::$app->getRouter()->getParams();
 		$this->render->setLayout('articles_layout');
-		//$params = Articles::getArticle($id);
-
 		if ((int)$params > 0) {
 			return $this->render('article');
 		} else {
