@@ -19,6 +19,7 @@ fetch("https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSe
   	var articles = data['value'];
   	
   	articles.forEach(function(article) {
+  		
   		let el = document.createElement('div');
 			let title = document.createElement('h2');
   		let snippet = document.createElement('p');

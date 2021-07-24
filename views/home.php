@@ -1,5 +1,5 @@
 <header>
-  <img src=" ../images/street.jpg" alt="street scape">
+  <img src=" ../images/street.jpg" alt="street scape" id="home_image">
 </header>
 </main>
 <article id="articles">

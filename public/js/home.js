@@ -16,12 +16,12 @@ fetch("https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/Trendi
   	var articles = data['value'];
   	articles.forEach(function(article) {
   		let el = document.createElement('div');
-			let title = document.createElement('h2');
-  		let snippet = document.createElement('p');
-  		title.textContent = article['title'];
-			snippet.textContent = article['snippet'];
+			let image = document.createElement('img');
+  		let title = document.createElement('h3');
+  		image.src = article['image']['url'];
+			title.textContent = article['title'];
+			el.appendChild(image);
 			el.appendChild(title);
-			el.appendChild(snippet);
   		art.appendChild(el);
   	})
   })
