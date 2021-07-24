@@ -4,7 +4,7 @@ use app\controllers\Controller;
 use app\core\Application;
 use app\core\Request;
 use app\core\Session;
-use app\database\models\Articles;
+use app\database\api\WebSearch\WebSearchAPI;
 
 /**
  * Class SiteController
@@ -35,53 +35,49 @@ class SiteController extends Controller
 	public function home()
 	{
 		$this->render->setLayout('main');
-		$params = Articles::getArticles(4);
-		return $this->render('home', $params);
+		return $this->render('home');
 	}
 
 		public function health()
 	{
 		$this->render->setLayout('articles_layout');
-		$params = Articles::getCategory('health');
-		return $this->render('health', $params);
+		$params = 'health';
+		return $this->render('category', $params);
 	}
 
 		public function science()
 	{
 		$this->render->setLayout('articles_layout');
-		$params = Articles::getCategory('science');
-		return $this->render('science', $params);
+		$params = 'science';
+		return $this->render('category', $params);
 	}
 
 		public function sport()
 	{
 		$this->render->setLayout('articles_layout');
-		$params = Articles::getCategory('sport');
-		return $this->render('sport', $params);
+		$params = 'sport';
+		return $this->render('category', $params);
 	}
 
 		public function business()
 	{
 		$this->render->setLayout('articles_layout');
-		$params = Articles::getCategory('business');
-		return $this->render('business', $params);
+		$params = 'business';
+		return $this->render('category', $params);
 	}
 	
 	public function allArticles()
 	{
 		$this->render->setLayout('articles_layout');
-		$params = Articles::getAllArticles();
-		return $this->render('articles', $params);
+		return $this->render('news');
 	}
 
 	public function showArticle()
 	{
 		$id = Application::$app->getRouter()->getParams();
 		$this->render->setLayout('articles_layout');
-		$params = Articles::getArticle($id);
-
 		if ((int)$params > 0) {
-			return $this->render('article', $params);
+			return $this->render('article');
 		} else {
 			die(require '../views/_404.php');
 		}

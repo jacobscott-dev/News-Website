@@ -6,17 +6,9 @@
 body {
     display: grid;
     grid-gap: 10px;
-
-    /* Arrange in three rows: each as tall as their content */
     grid-template-rows: max-content max-content max-content;
-
-    /* Arrange in two columns: 
-     - left-hand-side a fixed width, 
-     - right-hand-side with the remaining space */
     grid-template-columns: 20rem 1fr;
 
-    /* Limit page width to a sensible maximum 
-       and centre the page in the screen */
     max-width: 90rem;
     margin-left: auto;
     margin-right: auto;

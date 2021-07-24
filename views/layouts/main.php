@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
+    <h1>NEWS FIX</h1>
+      <form>
+    <div class="search_container">
+
+     <input class="search_bar"  type="text" placeholder="Search..">
+
+     <button class="search_btn" type="submit"><img src="../images/mag_glass.png"></button>
+
+   </div>
+   </form>
     <nav aria-label="Main menu">
       <ul>
 
@@ -58,14 +68,12 @@
       </ul>
     </nav>
     <main>
-      
 
        {{content}}
-       
     
      <footer>
-      <div id="about">About this website</div>
-      <div id="copyright">This is the copyright notice</div>
+      
     </footer>
+    
   </body>
 </html>
