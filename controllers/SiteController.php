@@ -41,25 +41,29 @@ class SiteController extends Controller
 		public function health()
 	{
 		$this->render->setLayout('articles_layout');
-		return $this->render('health');
+		$params = 'health';
+		return $this->render('category', $params);
 	}
 
 		public function science()
 	{
 		$this->render->setLayout('articles_layout');
-		return $this->render('science');
+		$params = 'science';
+		return $this->render('category', $params);
 	}
 
 		public function sport()
 	{
 		$this->render->setLayout('articles_layout');
-		return $this->render('sport');
+		$params = 'sport';
+		return $this->render('category', $params);
 	}
 
 		public function business()
 	{
 		$this->render->setLayout('articles_layout');
-		return $this->render('business');
+		$params = 'business';
+		return $this->render('category', $params);
 	}
 	
 	public function allArticles()
