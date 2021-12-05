@@ -13,7 +13,7 @@ class Request
 
 		$parts = explode('/', $path);
 
-		//if there are perameters such as an article id e.g. article/1
+		//if there are parameters such as an article id e.g. article/1
 		//set those parameters in the router
 		if (isset($parts[2])) {
 			Application::$app->getRouter()->setParams($parts[2]);
